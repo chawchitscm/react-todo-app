@@ -1,13 +1,85 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  color: hsl(234, 39%, 85%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  background-image: url('../public/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input {
+  font-size: 18px;
+  color: hsl(234, 39%, 85%);
+  display: block;
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  padding: 0 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.container {
+  padding: 80px 0;
+  width: 570px;
+  margin: 0 auto;
+}
+
+.todo-title {
+  color: #ffffff;
+  text-align: left;
+  font-size: 40px;
+  letter-spacing: 18px;
+  margin-bottom: 44px;
+}
+
+.input-wrapper {
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  padding: 24px 0;
+  border-radius: 10px;
+}
+
+.todo-list {
+  margin-top: 50px;
+}
+
+.todo-item-wrapper {
+  background-color: hsl(235, 24%, 19%);
+  width: 100%;
+  padding: 24px 15px 20px 15px;
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+}
+
+.todo-item-wrapper:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.todo-item-wrapper:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 0;
+}
+
+.todo-item-wrapper p {
+  text-align: left;
 }
