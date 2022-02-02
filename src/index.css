@@ -12,7 +12,7 @@ body {
   color: hsl(234, 39%, 85%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000;
+  background-color: hsl(233, 18%, 10%);
   background-image: url('../public/bg-desktop-dark.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -23,7 +23,8 @@ code {
     monospace;
 }
 
-input {
+input[type="text"] {
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
   color: hsl(234, 39%, 85%);
   display: block;
@@ -33,8 +34,24 @@ input {
   padding: 0 15px;
 }
 
-input:focus {
+input[type="text"]:focus {
   outline: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked {
+  background-color: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+}
+
+input[type="checkbox"]:hover {
+  border-color: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 }
 
 .container {
@@ -67,6 +84,8 @@ input:focus {
   width: 100%;
   padding: 24px 15px 20px 15px;
   border-bottom: 1px solid hsl(233, 14%, 35%);
+  display: flex;
+  align-items: center;
 }
 
 .todo-item-wrapper:first-child {
@@ -82,4 +101,70 @@ input:focus {
 
 .todo-item-wrapper p {
   text-align: left;
+  display: inline-block;
+}
+
+.todo-item-wrapper button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: auto;
+  display: none;
+}
+
+.todo-item-wrapper button svg {
+  vertical-align: middle;
+}
+
+.todo-item-wrapper:hover button {
+  display: inline-block;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: hsl(234, 11%, 52%);
+}
+
+.left-item {
+  font-size: 12px;
+  color: hsl(234, 11%, 52%);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+/* .foot-nav .action-btns {
+  margin: 0 auto;
+} */
+
+.foot-nav button {
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: hsl(234, 11%, 52%);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  /* margin-left: auto; */
+  display: inline-block;
+}
+
+.foot-nav button:hover {
+  color: hsl(234, 39%, 85%);
+}
+
+.foot-nav .actions-btn,
+.foot-nav .clear-btn {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.foot-nav .clear-btn {
+  text-align: right;
+}
+
+.foot-nav .active {
+  color: hsl(220, 98%, 61%);
 }
