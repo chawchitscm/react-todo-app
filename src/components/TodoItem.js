@@ -27,11 +27,11 @@ const TodoItem = props => {
   return (
     <div className="todo-item-wrapper">
       <div className="round">
-        <input type="checkbox" id={props.id} onChange={handleCheck} checked={props.todo.checked} />
+        <input type="checkbox" id={props.id} data-testid={props.id} onChange={handleCheck} checked={props.todo.checked} />
         <label htmlFor={props.id}></label>
       </div>
       <p className={strike}>{props.todo.text}</p>
-      <button onClick={() => props.handleDelete(props.id)}>
+      <button data-testid={props.id} onClick={() => props.handleDelete(props.id)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
       </button>
     </div>
