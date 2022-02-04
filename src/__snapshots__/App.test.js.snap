@@ -14,6 +14,7 @@ exports[`Container Test matches snapchost 1`] = `
     </h1>
     <button
       data-testid="switch"
+      id="switch-btn"
     >
       <svg
         height="26"

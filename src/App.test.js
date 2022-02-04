@@ -6,6 +6,12 @@ import * as Reducer from "./redux/ThemeReducer";
 import * as Actions from "./redux/ThemeAction";
 import TodoItem from "./components/TodoItem";
 import Container from "./components/Container";
+import App from "./App";
+import { shallow, configure, mount } from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+
 
 afterEach(cleanup)
 
@@ -294,4 +300,35 @@ describe("Container Test", () => {
     fireEvent.click(checkbox);
     expect(checkbox.checked).toEqual(false);
   })
+});
+
+configure({ adapter: new Adapter() });
+describe("App", () => {
+  const initialState  = {
+    theme: "light"
+  }
+  const mockStore = configureStore();
+  let store;
+  it("renders correctly", () => {
+    store = mockStore(initialState);
+    shallow(<Provider store={store}><App /></Provider>);
+  });
+
+  it("include one h1", () => {
+    store = mockStore(initialState);
+    const wrapper = mount(<Provider store={store}><App /></Provider>);
+    expect(wrapper.find("h1").length).toEqual(1)
+  });
+
+  it("called switch theme", () => {
+    // const switchTheme = jest.fn();
+    store = mockStore(initialState);
+    const wrapper = mount(<Provider store={store}><App /></Provider>);
+    // const instance = wrapper.instance();
+    // const spy = jest.spyOn(instance, "switchTheme");
+    // instance.forceUpdate();
+    // expect(spy).toHaveBeenCalled();
+    wrapper.find("#switch-btn").simulate("click");
+    // expect(spy).toHaveBeenCalled();
+  });
 });
