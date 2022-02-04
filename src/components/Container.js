@@ -97,9 +97,9 @@ const Container = (props) => {
         <div className="todo-item-wrapper foot-nav">
           <p className="left-item">{todos.filter(todo => todo.checked === false).length} items left</p>
           <div className="action-btns">
-            <button className={(type==="all" ? "active" : "")} onClick={handleAll}>All</button>
-            <button className={(type==="active" ? "active" : "")} onClick={handleActive}>Active</button>
-            <button className={(type==="completed" ? "active" : "")} onClick={handleCompleted}>Completed</button>
+            <button className={(type==="all" ? "active" : "")} onClick={handleAll} data-testid="all">All</button>
+            <button className={(type==="active" ? "active" : "")} onClick={handleActive} data-testid="active">Active</button>
+            <button className={(type==="completed" ? "active" : "")} onClick={handleCompleted} data-testid="completed">Completed</button>
           </div>
           <button onClick={handleClear} className="clear-btn" data-testid="clear">Clear Completed</button>
         </div>
